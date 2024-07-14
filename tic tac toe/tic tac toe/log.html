@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen - Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="loading-container">
+        <div class="loading-logo">
+            <img src="logo.png" alt="Logo" class="logo-image">
+        </div>
+        <p class="loading-slogan">"Empowering Play, Inspiring Innovation"</p>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        // Log a message
+        ipcRenderer.send('log-message', 'Hello from log.html!');
+
+        // Switch to index.html after 3 seconds
+        setTimeout(() => {
+            ipcRenderer.send('switch-page', 'index.html');
+        }, 3000); // Change 3000 to the desired delay in milliseconds
+    </script>
+</body>
+</html>

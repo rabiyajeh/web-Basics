@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - InspireTec Innovations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide overflow for the animated background */
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('th.jpg') center center fixed; /* Overlay with a semi-transparent background and the Tic Tac Toe board image */
+            background-size: cover;
+            color: #000; /* Dark text color for better contrast */
+            animation: boardAnimation 10s linear infinite; /* Board animation */
+        }
+
+        @keyframes boardAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        /* The rest of your CSS styles */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .thumbnail {
+            background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #333; /* Dark text color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: bounce 1s ease-in-out; /* Bounce animation */
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        #startGameButton {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background: linear-gradient(to right, #6ab1f7, #1a8cd9); /* Gradient button color */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 1s infinite; /* Pulse animation */
+        }
+
+        #startGameButton:hover {
+            background: linear-gradient(to right, #1a8cd9, #6ab1f7); /* Darker gradient on hover */
+        }
+
+        .fa-play {
+            margin-right: 10px;
+            animation: rotate 3s linear infinite; /* Rotate animation for 3 seconds */
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        footer {
+            background: #333;
+            padding: 20px;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* The rest of your styles */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="thumbnail">
+            <h1>Tic Tac Toe</h1>
+            <p>Embark on an adventure with the classic game</p>
+            <p>by InspireTec Innovations</p>
+            <button id="startGameButton" class="btn" onclick="startGame()">
+                <i class="fas fa-play"></i> Start the Game
+            </button>
+        </div>
+    </div>
+
+    <!-- Your HTML content here -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/c0adcd207d.js" crossorigin="anonymous"></script>
+    <script>
+        function startGame() {
+            window.location.href = 'tic_tac_toe.html'; // Replace with your actual game page
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            overflow: hidden;
+        }
+        
+        .pattern-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 50px 50px;
+            background-image: linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.1) 50%, transparent 50%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1));
+            opacity: 0.5;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        #loadingBar {
+            display: none;
+        }
+        
+        #loadingBarInner {
+            width: 0%;
+            transition: width 0.3s ease-in-out;
+        }
+        
+        
+        h2 {
+            color: #fff; /* Header color */
+            margin-bottom: 30px;
+        }
+        
+        #gameBoard {
+            margin: auto;
+        }
+        
+        .cell {
+            width: 100px;
+            height: 100px;
+            font-size: 36px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: 2px solid #2980b9;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cell:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+        
+        .cell.X {
+            color: #e74c3c; /* Color for 'X' */
+        }
+        
+        .cell.O {
+            color: #2ecc71; /* Color for 'O' */
+        }
+        
+        #buttons {
+            margin-top: 20px;
+        }
+        
+        .btn-danger {
+            font-size: 18px;
+            background-color: #e74c3c;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+        
+        #scoreboard {
+            margin-top: 20px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        #scoreboard h4, #scoreboard p {
+            margin: 0;
+        }
+        
+        #scoreboard p {
+            font-size: 18px;
+        }
+        
+        #gameBoard {
+            margin: auto;
+        }
+        
+        .cell {
+            width: 100px;
+            height: 100px;
+            font-size: 36px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: 2px solid #2980b9;
+            transition: background-color 0.3s, transform 0.2s ease-in-out; /* Added transform effect */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+        }
+        
+        .cell:hover {
+            background-color: #2980b9;
+            transform: scale(1.05); /* Enlarge on hover */
+        }
+        
+        #buttons {
+            margin-top: 20px;
+        }
+        
+        .btn-danger {
+            font-size: 18px;
+            background-color: #e74c3c;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+        
+        #scoreboard {
+            margin-top: 20px;
+            background: linear-gradient(to right, #3498db, #2ecc71); /* Gradient background */
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        #scoreboard h4, #scoreboard p {
+            margin: 0;
+        }
+        
+        #scoreboard p {
+            font-size: 18px;
+        }
+        
+        .modal-content {
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header {
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: #fff;
+        }
+        
+        .modal-title {
+            color: #fff;
+        }
+        
+        .modal-body p {
+            margin-bottom: 15px;
+        }
+        
+        .celebration-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .party-popper {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            animation: fallAnimation 2s linear;
+        }
+        
+        @keyframes fallAnimation {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+        
+        .celebration-dialog {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .celebration-content {
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+        
+        .celebration-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .celebration-text {
+            text-align: center;
+        }
+        
+        #celebrationModal {
+            transition: opacity 0.5s ease-in-out;
+            animation: fadeIn 0.5s ease-in-out; /* Fade-in animation */
+        }
+        
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            .cell {
+                font-size: 24px;
+            }
+            .cell.available-move {
+                background-color: #ffff66; /* Change the background color for highlighting */
+                cursor: pointer; /* Add a pointer cursor to indicate interaction */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="pattern-overlay"></div>
+    <div id="loadingBar" class="progress mt-4">
+        <div id="loadingBarInner" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    
+    <div class="container">
+        <h2 class="mt-4">Tic Tac Toe Game</h2>
+        <div id="scoreboard" class="mb-3"></div>
+        <div id="gameBoard"></div>
+        <div id="buttons" class="mt-4">
+            <button class="btn btn-danger" onclick="resetGame()">Refresh</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="playerModal" tabindex="-1" role="dialog" aria-labelledby="playerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="playerModalLabel">Player Settings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Welcome to Tic Tac Toe! Please choose your letter and decide who goes first.</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="playerLetter" id="radioX" value="✓">
+                        <label class="form-check-label" for="radioX">✓</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="playerLetter" id="radioO" value="O">
+                        <label class="form-check-label" for="radioO">O</label>
+                    </div>
+                    <p>Who goes first?</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="firstPlayer" id="radioPlayer1" value="1" checked>
+                        <label class="form-check-label" for="radioPlayer1">Player 1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="firstPlayer" id="radioChallenger" value="2">
+                        <label class="form-check-label" for="radioChallenger">Challenger</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="initGameSettings()">Start Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="celebrationModal" tabindex="-1" role="dialog" aria-labelledby="celebrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog celebration-dialog" role="document">
+            <div class="modal-content celebration-content">
+                <div class="modal-body celebration-body">
+                    <div id="party-poppers"></div>
+                    <div class="celebration-text">
+                        <p>Congratulations!</p>
+                        <p>You are the Overall Champion 🎉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="playerVsModal" tabindex="-1" role="dialog" aria-labelledby="playerVsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="playerVsModalLabel">Game Settings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Welcome to Tic Tac Toe! Please choose your letter and opponent.</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="playerLetter" id="radioX" value="X">
+                        <label class="form-check-label" for="radioX">X</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="playerLetter" id="radioO" value="O">
+                        <label class="form-check-label" for="radioO">O</label>
+                    </div>
+                    <p>Choose Opponent:</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="opponent" id="radioPlayer" value="player" checked>
+                        <label class="form-check-label" for="radioPlayer">Player</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="opponent" id="radioBot" value="bot">
+                        <label class="form-check-label" for="radioBot">Bot</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="initGameSettings()">Start Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="continueModal" tabindex="-1" role="dialog" aria-labelledby="continueModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="continueModalLabel">Game Over</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>The game is over. Do you want to play again?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="startGame()">New Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="celebration-container" id="celebrationContainer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        let player1Letter;
+        let opponentType;
+        let challengerLetter;
+        let startingPlayer;
+        let gameBoard = ['', '', '', '', '', '', '', '', ''];
+        let currentPlayer = '✓';
+        let gameRound = 1;
+        let player1Score = 0;
+        let challengerScore = 0;
+        let consecutiveWins = 0;
+    
+        window.onload = function () {
+            $('#playerVsModal').modal('show');
+        };
+    
+        function initGameSettings() {
+            player1Letter = $('input[name="playerLetter"]:checked').val();
+            opponentType = $('input[name="opponent"]:checked').val();
+    
+            if (player1Letter && opponentType) {
+                challengerLetter = (player1Letter === '✓') ? 'O' : '✓';
+                currentPlayer = (opponentType === 'player') ? '✓' : 'O'; // Reset to '✓' or 'O' based on opponent
+    
+                initializeGame();
+                $('#playerVsModal').modal('hide');
+    
+                if (opponentType === 'bot' && currentPlayer === 'O') {
+                    setTimeout(() => botMove(), 500);
+                } else if (opponentType === 'player' && currentPlayer === 'O') {
+                    // Random player's turn
+                    // Removed the setTimeout for a more immediate user move
+                    randomPlayerMove();
+                }
+            } else {
+                alert('Please select both letter and opponent.');
+            }
+        }
+    
+        function initializeGame() {
+            createGameBoard();
+            updateScoreboard();
+        }
+    
+        function randomPlayerMove() {
+            // Check if it's the user's turn
+            if (currentPlayer === 'O') {
+                const emptyCells = gameBoard.reduce((acc, cell, index) => {
+                    if (cell === '') {
+                        acc.push(index);
+                    }
+                    return acc;
+                }, []);
+    
+                if (emptyCells.length > 0) {
+                    // Set up event listeners for each empty cell
+                    emptyCells.forEach(index => {
+                        document.getElementsByClassName('cell')[index].addEventListener('click', () => makeMove(index));
+                    });
+                }
+            }
+        }
+    
+        function createGameBoard() {
+            const table = document.createElement('table');
+            table.id = 'gameBoard';
+            document.querySelector('.container').appendChild(table);
+    
+            for (let i = 0; i < 3; i++) {
+                let row = table.insertRow(i);
+                for (let j = 0; j < 3; j++) {
+                    let cell = row.insertCell(j);
+                    cell.innerHTML = `<div class="cell" onclick="makeMove(${3 * i + j})"></div>`;
+                }
+            }
+        }
+        function highlightAvailableMoves() {
+            const emptyCells = gameBoard.reduce((acc, cell, index) => {
+                if (cell === '') {
+                    acc.push(index);
+                }
+                return acc;
+            }, []);
+
+            emptyCells.forEach(index => {
+                document.getElementsByClassName('cell')[index].classList.add('available-move');
+                document.getElementsByClassName('cell')[index].addEventListener('click', () => makeMove(index));
+            });
+        }
+
+        function removeHighlight() {
+            const cells = document.getElementsByClassName('cell');
+            for (let i = 0; i < cells.length; i++) {
+                cells[i].classList.remove('available-move');
+            }
+        }
+
+        function randomPlayerMove() {
+            // Check if it's the user's turn
+            if (currentPlayer === 'O') {
+                highlightAvailableMoves();
+            }
+        }
+
+        function makeMove(index) {
+            if (gameBoard[index] === '' && (currentPlayer === '✓' || opponentType === 'player')) {
+                gameBoard[index] = currentPlayer;
+                document.getElementsByClassName('cell')[index].innerText = currentPlayer;
+    
+                if (checkWin()) {
+                    alert(`Player ${currentPlayer} wins the round!`);
+                    updateScore();
+                    resetGame();
+                } else if (checkDraw()) {
+                    alert('It\'s a draw!');
+                    resetGame();
+                } else {
+                    currentPlayer = (currentPlayer === '✓') ? 'O' : '✓';
+                    // Bot's turn
+                    if (opponentType === 'bot' && currentPlayer === 'O') {
+                        setTimeout(() => botMove(), 300); // Add a delay for a more natural feel
+                    } else if (opponentType === 'player' && currentPlayer === 'O') {
+                        // Random player's turn
+                        setTimeout(() => randomPlayerMove(), 500);
+                    }
+                }
+            }
+        }
+    
+        function botMove() {
+            // Bot logic goes here
+            const emptyCells = gameBoard.reduce((acc, cell, index) => {
+                if (cell === '') {
+                    acc.push(index);
+                }
+                return acc;
+            }, []);
+    
+            if (emptyCells.length > 0) {
+                const randomIndex = Math.floor(Math.random() * emptyCells.length);
+                const botIndex = emptyCells[randomIndex];
+    
+                setTimeout(() => {
+                    gameBoard[botIndex] = currentPlayer;
+                    document.getElementsByClassName('cell')[botIndex].innerText = currentPlayer;
+    
+                    if (checkWin()) {
+                        alert(`Player ${currentPlayer} wins the round!`);
+                        updateScore();
+                        resetGame();
+                    } else if (checkDraw()) {
+                        alert('It\'s a draw!');
+                        resetGame();
+                    } else {
+                        currentPlayer = '✓';
+                        randomPlayerMove();
+                    }
+                }, 500);
+            }
+        }
+    
+        function checkWin() {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+                [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+                [0, 4, 8], [2, 4, 6]              // Diagonals
+            ];
+    
+            return winPatterns.some(pattern =>
+                pattern.every(index => gameBoard[index] === currentPlayer)
+            );
+        }
+    
+        function checkDraw() {
+            return gameBoard.every(cell => cell !== '');
+        }
+    
+        function resetGame() {
+            currentPlayer = '✓'; // Reset to '✓'
+            gameBoard = ['', '', '', '', '', '', '', '', ''];
+            document.querySelectorAll('.cell').forEach(cell => cell.innerText = '');
+            gameRound++;
+            consecutiveWins = (checkConsecutiveWins()) ? consecutiveWins + 1 : 0;
+    
+            if (gameRound > 6 || consecutiveWins === 3) {
+                declareChampion();
+            } else if (opponentType === 'bot' && currentPlayer === 'O') {
+                setTimeout(() => botMove(), 500);
+            } else if (opponentType === 'player' && currentPlayer === 'O') {
+                setTimeout(() => randomPlayerMove(), 500);
+            }
+        }
+    
+        function checkConsecutiveWins() {
+            const lastRoundWinner = (currentPlayer === '✓') ? 'Player 1' : 'Challenger';
+            return (lastRoundWinner === 'Player 1' && player1Score > challengerScore) ||
+                (lastRoundWinner === 'Challenger' && challengerScore > player1Score);
+        }
+    
+        function updateScore() {
+            if (currentPlayer === '✓') {
+                player1Score++;
+            } else {
+                challengerScore++;
+            }
+    
+            updateScoreboard();
+        }
+    
+        function updateScoreboard() {
+            document.getElementById('scoreboard').innerHTML = `
+                <h4>Scoreboard</h4>
+                <p>Player 1: ${player1Score} Wins | Challenger: ${challengerScore} Wins</p>
+                <p>Round: ${gameRound}</p>
+            `;
+        }
+    
+        function declareChampion() {
+            let champion = '';
+            if (player1Score > challengerScore) {
+                champion = 'Player 1';
+            } else if (challengerScore > player1Score) {
+                champion = 'Challenger';
+            } else {
+                champion = 'It\'s a tie!';
+            }
+    
+            alert(`Overall Champion 🏆: ${champion}`);
+            resetScores();
+            gameRound = 1;
+    
+            if (gameRound === 4 || gameRound === 7) {
+                showCelebration();
+            }
+        }
+    
+        function resetScores() {
+            player1Score = 0;
+            challengerScore = 0;
+        }
+    
+        function startGame() {
+            $('#playerModal').modal('show');
+        }
+    
+        function showCelebration() {
+            particlesJS('party-poppers', {
+                // ... (same particles.js configuration as before)
+            });
+    
+            $('#celebrationModal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+    
+            setTimeout(() => {
+                $('#celebrationModal').css('opacity', 1);
+            }, 500);
+        }
+    </script>
+    
+    
+</body>
+</html>
+           

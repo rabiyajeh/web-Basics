@@ -1,0 +1,54 @@
+
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #fdcbf1, #e6f1fd); /* Gradient background */
+            color: #333; /* Dark text color for better contrast */
+            overflow: hidden; /* Hide overflow for rotating effect */
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .loading-logo {
+            margin-bottom: 20px;
+            border-radius: 50%; /* Make the logo round */
+            width: 100px; /* Adjust the size as needed */
+            height: 100px;
+            background: #fff; /* Background color for the round shape */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: rotate 3s linear infinite; /* Change the animation */
+        }
+
+        .logo-image {
+            width: 80%; /* Adjust the size of the logo image inside the round shape */
+            height: auto;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-slogan {
+            font-size: 1.5em;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+    

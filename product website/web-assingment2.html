@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Product Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Product Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>  
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-1 lab1">
+                <a href="#" class="text-white font-weight-bold filter-button" data-filter="all">All</a>
+            </div>
+            <div class="col-lg-2 lab1">
+                <a href="#" class="text-white font-weight-bold filter-button" data-filter="all">New Arrival</a>
+            </div>
+            <div class="col-lg-1 lab1">
+                <a href="#" class="text-white font-weight-bold filter-button" data-filter="all">Sale</a>
+            </div>
+            <div class="col-lg-1 lab1">
+                <a href="#" class="text-white font-weight-bold filter-button" data-filter="all">Popular</a>
+            </div>
+            <div class="col-lg-2 lab1">
+                <a href="#" class="text-white font-weight-bold filter-button" data-filter="all">Imported</a>
+            </div>
+        </div>
+<!-- Product Row -->
+<div class="row products shoes">
+    <!-- Example product 1  Shoes-->
+
+<div class="col-lg-3 col-md-3 products shoes" data-price="49.99" data-category="all" data-image="https://th.bing.com/th/id/OIP.u765HCg-Wv1dkRDSpnnAvgAAAA?w=300&h=300&c=7&r=0&o=5&pid=1.7">
+    <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+        <img src="https://th.bing.com/th/id/OIP.u765HCg-Wv1dkRDSpnnAvgAAAA?w=300&h=300&c=7&r=0&o=5&pid=1.7" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+        <div class="card-body">
+            <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 1</h5>
+            <p class="card-text mb-1" style="color: #555;">Category: Electronics</p>
+            <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+            <p class="card-text mb-3" style="color: #555;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+            <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+        </div>
+    </div>
+</div>
+ 
+
+    <!-- Example product 2 -->
+    <div class="col-lg-3 col-md-3 product all" data-price="49.99" data-category="sale">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="shoe1.jpg" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 2</h5>
+                <p class="card-text mb-1" style="color: #555;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #555;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 3 -->
+    <div  class="col-lg-3 col-md-3 product all sale" data-price="49.99" data-category="sale">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://th.bing.com/th/id/OIP.36BCINH_a7rVWkMONO6bZAHaHa?w=176&h=180&c=7&r=0&o=5&pid=1.7" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 3</h5>
+                <p class="card-text mb-1" style="color: #555;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #555;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 4 -->
+    <div class="col-lg-3 col-md-3 product all imported" data-price="49.99" data-category="imported">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://th.bing.com/th?id=OIF.iQD2e6t8sNPcnNgtECVG%2bA&w=300&h=300&c=7&r=0&o=5&pid=1.7" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 4</h5>
+                <p class="card-text mb-1" style="color: #555;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #555;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Row -->
+<div class="row products clothes">
+    <!-- Example product 1 Clothes  -->
+    <div class="col-lg-3 col-md-3 product all popular ">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://th.bing.com/th/id/OIP.077N83KIUGLUO-cVWeBYDAHaJS?w=184&h=231&c=7&r=0&o=5&pid=1.7" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 5</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+ 
+
+    <!-- Example product 2 -->
+    <div class="col-lg-3 col-md-3 product all newarrival">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="shoe2.jpg" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 6</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 3 -->
+    <div class="col-lg-3 col-md-3 product all sale">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://th.bing.com/th/id/OIP.u8hMb6-ZbKI4ftaMDFgYDwAAAA?rs=1&pid=ImgDetMain" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 7</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 4 -->
+    <div class="col-lg-3 col-md-3 product all imported">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://th.bing.com/th/id/OIP.K188jVgOLNcWwnytFpLMgwHaHa?pid=ImgDet&w=182&h=182&c=7" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 8</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Row -->
+<div class="row products electronics all popular">
+    <!-- Example product 1  Electronics -->
+    <div class="col-lg-3 col-md-3 product all">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://content.jdmagicbox.com/comp/bhopal/a4/0755px755.x755.120921155350.p8a4/catalogue/mangalam-electronics-m-p-nagar-bhopal-electronic-goods-showrooms-80lbmi.jpg" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 9</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+  
+
+    <!-- Example product 2 -->
+    <div class="col-lg-3 col-md-3 product all imported">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy3ZNK5RDUH4x74GRnbl7jQNec-wEUkkTlyRd32nO8kRR5XX98p6sNxT8vD5SnmZus7S8&usqp=CAU" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 10</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 3 -->
+    <div class="col-lg-3 col-md-3 product all newarrival">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://www.twice.com/wp-content/uploads/2019/11/watches.jpg" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 11</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 4 -->
+    <div class="col-lg-3 col-md-3 product all sale">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://www.pbpawn.com/wp-content/uploads/2022/02/electronic-gadgets.jpeg" width="50px" height="170px" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 12</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Row  jewellery-->
+<div class="row products jewellery">
+    <!-- Example product 1 -->
+    <div class="col-lg-3 col-md-3 product all newarrival ">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="ring1.jpg" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 13</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+ 
+
+    <!-- Example product 2 -->
+    <div class="col-lg-3 col-md-3 product all">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8V65bqOko-MA0a7RY0_bx_ZstYP6ptIF3wQ&usqp=CAU" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 14</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 3 -->
+    <div class="col-lg-3 col-md-3 product all">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbhG8r1IzNNlO1MCIZq_GQwEr6E7S4M9sOuw&usqp=CAU" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 15</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 4 -->
+    <div class="col-lg-3 col-md-3 product all">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFWTLw7kt-G_s9J3dS6JrZweeq775w9nNuoQ&usqp=CAU" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 16</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Row watches -->
+<div class="row products watches">
+    <!-- Example product 1 -->
+    <div class="col-lg-3 col-md-3 product all">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCT-o7XRtsIweDUBKg24FbrX_AzBInfJRxFS_X5qsaNbKGnWyXi1WyelfV4bkmMj7yBOg&usqp=CAU" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 17</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 2 -->
+    <div class="col-lg-3 col-md-3 product all">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="watch2.jpg" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 18</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 3 -->
+    <div class="col-lg-3 col-md-3 product all" >
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1dgf17plUHN5JpDKO0WOLd2laK6haupH2SA&usqp=CAU" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 19</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example product 4 -->
+    <div class="col-lg-3 col-md-3 product all">
+        <div class="card product" style="border: none; border-radius: 10px; background-color: #ffffff; color: #333;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJKW98zztqqtQIDUgyf3xqUjqJuGiBMikkrQ&usqp=CAU" class="card-img-top" alt="Product Image" style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold" style="color: #007bff;">Product 20</h5>
+                <p class="card-text mb-1" style="color: #333;">Category: Electronics</p>
+                <p class="card-text mb-1 font-weight-bold" style="color: #007bff;">Price: $20.00</p>
+                <p class="card-text mb-3" style="color: #333;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam vel felis laoreet ultricies.</p>
+                <button class="btn btn-primary btn-block add-to-cart" style="background-color: #007bff; border-color: #007bff; color: #ffffff;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Advanced modal with icons and dynamic content -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+
+<div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addToCartModalLabel">Product Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Dynamic image based on the clicked product card -->
+                        <img id="modalProductImage" src="shoe2.jpg" alt="Product Image" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 id="modalProductName">Product Name</h4>
+                        <p id="modalProductDescription">Product description goes here. Provide detailed information about the product.</p>
+                        <div class="quantity-container">
+                            <label for="quantity">Quantity:</label>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-btn btn btn-default btn-number" data-type="minus" data-field="quantity">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </span>
+                                <input type="text" name="quantity" class="form-control input-number" value="1" min="1" max="10">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-btn btn btn-default btn-number" data-type="plus" data-field="quantity">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="price-container">
+                            <label for="price">Total Price:</label>
+                            <span id="totalPrice">$20.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue Shopping</button>
+                <button type="button" class="btn btn-primary" id="customAddToCartBtn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cart Box -->
+<div id="cartBox">
+
+    <span id="closeCartBox">&times;</span>
+    
+    <p id="cartTotalItems">Total Items: <span id="cartTotalItemsCount">0</span></p>
+    <p id="cartTotalPrice">Total Price: <span id="cartTotalPriceValue">$0.00</span></p>
+    <div id="cartItemsList"></div>
+    <button type="button" class="btn btn-danger" id="clearCartBtn">Clear Cart</button>
+
+  </div>
+  
+
+
+  
+  
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            
+            <button class="btn btn-primary" id="prevCategory">Previous</button>
+         
+            <div id="numericButtons" class="d-inline-block mx-2"></div> <!-- Added mx-2 for spacing -->
+            <button class="btn btn-primary" id="nextCategory">Next</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        // Handle filter button click
+        $('.filter-button').on('click', function () {
+          var value = $(this).attr('data-filter');
+    
+          // Show all products when 'All' is selected
+          if (value === 'all') {
+            $('.product').show();
+          } else {
+            // Hide all products
+            $('.product').hide();
+    
+            // Show products that match the selected category
+            $('.product[data-category*="' + value + '"]').show();
+          }
+        });
+      });
+
+
+    $(document).ready(function () {
+        var categories = ['all', 'shoes', 'clothes', 'electronics', 'jewellery', 'watches']; // Add more categories here
+        var currentIndex = 0;
+
+        function showCategory(index) {
+            $('.filter-button').removeClass('active');
+            $('.filter-button[data-filter="' + categories[index] + '"]').addClass('active');
+            $('#currentCategoryNumber').text(index + 1);
+
+            // Your existing filtering code here
+            if (categories[index] === 'all') {
+                $('.products').slideDown();
+            } else {
+                $('.products').hide();
+                $('.' + categories[index]).slideDown();
+            }
+        }
+
+        function createNumericButtons() {
+            var numericButtonsHtml = '';
+            for (var i = 0; i < categories.length; i++) {
+                numericButtonsHtml += '<button class="btn btn-primary numeric-button mx-1" data-index="' + i + '">' + (i + 1) + '</button>';
+            }
+            $('#numericButtons').html(numericButtonsHtml);
+
+            // Numeric button click event
+            $('.numeric-button').on('click', function () {
+                var index = $(this).data('index');
+                currentIndex = index;
+                showCategory(index);
+            });
+        }
+
+        // Show the first category on page load
+        showCategory(currentIndex);
+
+        // Create numeric buttons
+        createNumericButtons();
+
+        // Previous category button click event
+        $('#prevCategory').on('click', function () {
+            currentIndex = (currentIndex - 1 + categories.length) % categories.length;
+            showCategory(currentIndex);
+        });
+
+        // Next category button click event
+        $('#nextCategory').on('click', function () {
+            currentIndex = (currentIndex + 1) % categories.length;
+            showCategory(currentIndex);
+        });
+    });
+
+
+
+    //modal 
+// Function to handle "Add to Cart" button click
+function handleAddToCartClick() {
+    // Extract information from the clicked product card
+    var $product = $(this).closest('.product');
+    var productName = $product.find('.card-title').text();
+    var productDescription = $product.find('.card-text.mb-3').text();
+    var productImage = $product.find('.card-img-top').attr('src');
+    var productPriceString = $product.find('.font-weight-bold').text().replace('$', '');
+    var productPrice = parseFloat(productPriceString);
+
+    // Update modal content with the extracted information
+    $('#modalProductName').text(productName);
+    $('#modalProductDescription').text(productDescription);
+    $('#modalProductImage').attr('src', productImage);
+
+    // Set the price-related elements in the modal
+    $('#modalProductPrice').data('price', productPrice);
+    $('#modalProductPrice').text('$' + productPriceString);
+
+    // Reset quantity to 1 and update total price
+    $('input[name=quantity]').val(1);
+    updateTotalPrice();
+
+    // Show the modal
+    $('#addToCartModal').modal('show');
+}
+
+// Event listener for "Add to Cart" button click
+$('.add-to-cart').on('click', handleAddToCartClick);
+
+// Event listener for quantity buttons
+$('.quantity-btn').click(function (e) {
+    e.preventDefault();
+
+    // Get the field name (quantity)
+    var fieldName = $(this).attr('data-field');
+    // Get the current quantity
+    var currentVal = parseInt($('input[name=' + fieldName + ']').val(), 10);
+
+    // Check if the button clicked is plus or minus
+    if (!isNaN(currentVal)) {
+        // Adjust quantity based on button type
+        var newVal = ($(this).attr('data-type') === 'minus') ? Math.max(currentVal - 1, 1) : Math.min(currentVal + 1, 10);
+        $('input[name=' + fieldName + ']').val(newVal);
+    } else {
+        // If the current value is not a number, set it to 1
+        $('input[name=' + fieldName + ']').val(1);
+    }
+
+    // Update the total price based on the quantity
+    updateTotalPrice();
+});
+
+// Function to update the total price based on the quantity
+function updateTotalPrice() {
+    var quantity = parseInt($('input[name=quantity]').val(), 10);
+    var unitPrice = parseFloat($('#modalProductPrice').data('price'));
+
+    // Check if unitPrice is a valid number
+    if (!isNaN(unitPrice)) {
+        // Calculate the total price
+        var totalPrice = (quantity * unitPrice).toFixed(2);
+
+        // Update the total price in the modal
+        $('#totalPrice').text('$' + totalPrice);
+    } else {
+        console.error('Invalid unitPrice:', unitPrice);
+    }
+}
+
+
+
+
+    
+    // Additional logic when "Add to Cart" button in the modal is clicked
+    $('#addToCartBtn').on('click', function () {
+        // You can add your logic to handle the addition to the cart here
+        var quantity = $('input[name=quantity]').val();
+        var totalPrice = $('#totalPrice').text();
+        console.log('Product added to cart with quantity: ' + quantity + ' and total price: ' + totalPrice);
+    
+        // Close the modal
+        $('#addToCartModal').modal('hide');
+    });
+    $('#customAddToCartBtn').on('click', function () {
+        // Simulate adding the product to the cart
+        var quantity = parseInt($('input[name=quantity]').val(), 10);
+        var totalPrice = parseFloat($('#totalPrice').text().replace('$', ''));
+    
+        cartTotalItems += quantity;
+    
+    
+        updateCartSummary(); // Update the cart summary
+    
+        // Update the cart modal with the added item
+        var productName = $('#modalProductName').text();
+        var cartItemHtml = '<p>' + productName + ' - Quantity: ' + quantity + ' - Total Price: ' + totalPrice.toFixed(2) + '</p>';
+        $('#cartModal .modal-body').append(cartItemHtml);
+    
+        // Close the modal
+        $('#addToCartModal').modal('hide');
+    });
+    
+// Cart Summary Variables
+var cartTotalItems = 0;
+var cartTotalPrice = 0.0;
+
+// Function to update the cart summary
+function updateCartSummary() {
+    $('#cartTotalItems').text(cartTotalItems);
+    $('#cartTotalPrice').text('$' + cartTotalPrice.toFixed(2));
+}
+
+// Function to handle "Add to Cart" button click
+function handleAddToCart() {
+    var quantity = parseInt($('input[name=quantity]').val(), 10);
+    var totalPrice = parseFloat($('#totalPrice').text().replace('$', ''));
+
+    cartTotalItems += quantity;
+    cartTotalPrice += totalPrice;
+
+    updateCartSummary();
+    
+    var productName = $('#modalProductName').text();
+    var cartItemHtml = '<p>' + productName + ' - Quantity: ' + quantity + ' - Total Price: ' + totalPrice.toFixed(2) + '</p>';
+    $('#cartModal .modal-body').append(cartItemHtml);
+
+    // Close the modal
+    $('#addToCartModal').modal('hide');
+}
+
+// Event listener for "Add to Cart" button click
+$('#customAddToCartBtn').on('click', handleAddToCart);
+
+// Event listener for "Clear Cart" button click
+$('#clearCartBtn').on('click', function () {
+    // Clear cart items and update the summary
+    clearCart();
+});
+
+// Event listener for "Close Cart Box" button click
+$('#closeCartBox').on('click', function () {
+    $('#cartBox').hide();
+});
+
+// Function to clear the cart
+function clearCart() {
+    cartTotalItems = 0;
+    cartTotalPrice = 0.0;
+
+    // Update cart box and summary
+    updateCartSummary();
+
+    // Clear the cart modal content
+    $('#cartModal .modal-body').html('');
+
+    // Close the modal
+    $('#addToCartModal').modal('hide');
+}
+
+
+
+
+
+
+  
+
+    
+</script>
+
+
+
+
+
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

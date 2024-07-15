@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    transform: perspective(1000px) rotateX(10deg);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #e0e0e0, #ffffff);
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    background-color: #fff;
+    padding: 0 0.5rem;
+    color: #aaa;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    transform: translateZ(20px);
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+    top: 0;
+    transform: translateY(-100%) translateZ(10px);
+    font-size: 0.75rem;
+    color: #007bff;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}

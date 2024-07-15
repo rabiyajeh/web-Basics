@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            position: relative;
+            animation: moveAndChangeColor 5s infinite alternate;
+        }
+        
+        @keyframes moveAndChangeColor {
+            0% {
+                left: 0;
+                background-color: #3498db;
+            }
+            50% {
+                left: calc(100% - 100px);
+                background-color: #e74c3c;
+            }
+            100% {
+                left: 0;
+                background-color: #2ecc71;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="animated-box"></div>
+</body>
+</html>
